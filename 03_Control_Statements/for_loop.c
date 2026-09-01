@@ -2,12 +2,18 @@
 
 int main()
 {
-    int i;
+    FILE  *ptr;
+    ptr=fopen("trxt.txt", "r");
 
-    for (i = 1; i <= 10; i++)
-    {
-        printf("%d\n", i);
-    }
+    int a;
+    fscanf(ptr, "%d", &a);
+    int b;
+    fscanf(ptr, "%d", &b);
+    fclose(ptr);
 
+  ptr=fopen("trxt.txt", "w");
+ fprintf(ptr,"%d",a+b);
+   fclose(ptr);
+    
     return 0;
 }

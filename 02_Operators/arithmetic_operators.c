@@ -2,13 +2,17 @@
 
 int main()
 {
-    int a = 20, b = 5;
+    FILE *fptr;
+int temp;
+    fptr=fopen("text.txt","rb");
+    
+    if (fptr==NULL){
+        perror("Error");
+        return 1;
+    }  fread(&temp, sizeof(temp),1,fptr);
+printf("temperature :%d \n",temp);
 
-    printf("Addition = %d\n", a + b);
-    printf("Subtraction = %d\n", a - b);
-    printf("Multiplication = %d\n", a * b);
-    printf("Division = %d\n", a / b);
-    printf("Modulus = %d\n", a % b);
+      printf("successfully print\n");   
 
-    return 0;
+    fclose(fptr);
 }
